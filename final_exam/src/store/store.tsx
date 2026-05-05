@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
-    reducer: []
+    reducer: {}
 })
 
 export type RootType = ReturnType<typeof store.getState>

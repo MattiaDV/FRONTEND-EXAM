@@ -1,0 +1,11 @@
+:root {
+    --bg-navbar: #ffffff;
+    --text-color-navbar: #000824;
+    --text: #fff;
+    --special-text: #0057bb;
+    --bg: #000824;
+}
+
+body {
+    background: #000824;
+}
