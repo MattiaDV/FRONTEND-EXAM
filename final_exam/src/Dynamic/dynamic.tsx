@@ -2,15 +2,18 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import type { product } from "../types/prod";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { add } from "../store/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
+import type { RootType } from "../store/store";
 
 export default function ProductPage() {
     const { id } = useParams();
     const navigate = useNavigate();
     const [prod, setProd] = useState<product>();
     const dispatch = useDispatch();
+
+    const isLogged = useSelector((state: RootType) => state.log);
 
     useEffect(() => {
         const fetchProd = async () => {
@@ -22,13 +25,22 @@ export default function ProductPage() {
     }, [id]);
 
     function addToCart(prod: product) {
-        dispatch(add(prod))
-        toast.success("Aggiunto al carrello!", {
-            position: "bottom-right",
-            autoClose: 2000,
-            theme: "dark",
-            style: { background: "#000824", border: "1px solid #0057bb33", color: "white" }
-        });
+        if (isLogged.log) {
+            dispatch(add(prod))
+            toast.success("Aggiunto al carrello!", {
+                position: "bottom-right",
+                autoClose: 2000,
+                theme: "dark",
+                style: { background: "#000824", border: "1px solid #0057bb33", color: "white" }
+            });
+        } else {
+            toast.error("Errore, devi prima loggarti!", {
+                position: "bottom-right",
+                autoClose: 2000,
+                theme: "dark",
+                style: { background: "#000824", border: "1px solid #0057bb33", color: "white" }
+            });
+        }
     }
 
     if (!prod) return (

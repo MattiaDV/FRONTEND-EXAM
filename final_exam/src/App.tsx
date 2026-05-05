@@ -5,6 +5,7 @@ import ProductPage from './Dynamic/dynamic'
 import CategoriesPage from './pages/Categories'
 import ProductsPage from './pages/ProductsPage'
 import Cart from './pages/cart'
+import LoginPage from './pages/LoginPage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/categories" element={<CategoriesPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/carrello" element={<Cart />} />
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
   )
 }
