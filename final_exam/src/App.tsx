@@ -6,6 +6,8 @@ import CategoriesPage from './pages/Categories'
 import ProductsPage from './pages/ProductsPage'
 import Cart from './pages/cart'
 import LoginPage from './pages/LoginPage'
+import AdminPanel from './pages/AdminPage'
+import PageNotFound from './pages/404Page'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/carrello" element={<Cart />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/admin" element={<AdminPanel />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   )
 }

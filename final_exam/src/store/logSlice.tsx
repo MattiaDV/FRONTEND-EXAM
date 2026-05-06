@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const logSlice = createSlice({
     name: "login",
-    initialState: { log: false, role: "" },
+    initialState: { username: "", password: "", log: false, role: "" },
     reducers: {
-        logged: (state, action) => {state.log = true, state.role = action.payload.role},
-        unlog: (state) => {state.log = false, state.role = ""}
+        logged: (_, action) => {return action.payload},
+        unlog: () => {return {username: "", password: "", log: false, role: ""}}
     }
 })
 

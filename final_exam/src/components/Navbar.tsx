@@ -9,6 +9,8 @@ export default function Navbar() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
+    const isAdmin = useSelector((state: RootType) => state.log.role == "admin");
+
     function logout() {
         dispatch(unlog());
         navigate("/");
@@ -26,7 +28,13 @@ export default function Navbar() {
                 !isLogged.log ? 
                 <div onClick={() => navigate("/login")} className="cursor-[pointer] p-[10px] transition-all duration-[400ms] border border-none hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[100px] text-center rounded-[10px]">Login</div>
                 :
-                <div onClick={() => logout()} className="cursor-[pointer] p-[10px] transition-all duration-[400ms] border border-none hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[100px] text-center rounded-[10px]">{isLogged.role}</div>
+                <div onClick={() => logout()} className="cursor-[pointer] p-[10px] transition-all duration-[400ms] border border-none hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[100px] text-center rounded-[10px]">{isLogged.username}</div>
+            }
+            {
+                isAdmin ?  
+                <div onClick={() => navigate("/admin")} className="cursor-[pointer] p-[10px] transition-all duration-[400ms] border border-none hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[200px] text-center rounded-[10px]">Admin Panel</div>
+                :
+                ""
             }
         </div>
     )
