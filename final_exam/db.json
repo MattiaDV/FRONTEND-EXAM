@@ -87,9 +87,9 @@
     {
       "id": "13",
       "name": "Portafoglio slim",
-      "cost": 49,
       "description": "Portafoglio sottile in pelle con blocco RFID",
-      "category": "Accessori"
+      "category": "Accessori",
+      "cost": 50
     },
     {
       "id": "14",

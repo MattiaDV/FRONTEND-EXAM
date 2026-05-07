@@ -52,12 +52,50 @@ export default function Contact() {
                     voglia saperne di più sul nostro store, saremo felici di aiutarti.
                 </p>
 
-                <div className="md:w-[350px] w-[90%] flex flex-col gap-[10px] justify-center items-center p-[20px] bg-[var(--bg)] mt-[20px] border border-none rounded-[10px]">
-                    <h1 className="text-[var(--special-text)] text-[20px] font-bold">Inviaci un messaggio</h1>
-                    <input className="w-[100%] p-[10px] border border-[var(--text)] bg-[transparent] text-[15px] text-[var(--text)] outline-none rounded-[10px] transition-all duration-[400ms] focus:bg-[var(--text)] focus:text-[var(--special-text)]" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Insert name" />
-                    <input className="w-[100%] p-[10px] border border-[var(--text)] bg-[transparent] text-[15px] text-[var(--text)] outline-none rounded-[10px] transition-all duration-[400ms] focus:bg-[var(--text)] focus:text-[var(--special-text)]" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Insert email" />
-                    <textarea className="w-[100%] resize-none h-[200px] p-[10px] border border-[var(--text)] bg-[transparent] text-[15px] text-[var(--text)] outline-none rounded-[10px] transition-all duration-[400ms] focus:bg-[var(--text)] focus:text-[var(--special-text)]" value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Insert message"></textarea>
-                    <button className="w-[100%] p-[10px] border border-[var(--text)] bg-[var(--text)] text-[15px] text-[var(--special-text)] outline-none rounded-[10px] transition-all duration-[400ms] hover:bg-[var(--special-text)] hover:text-[var(--text)]" onClick={() => addM(name, email, message)}>Send!</button>
+                <div className="w-[90%] md:w-[380px] mt-[20px] flex flex-col gap-3 p-6 rounded-2xl border-[1.5px] border-[#dce8f7] bg-[#f4f7fc]">
+                    <h2 className="text-xl font-medium mb-1" style={{ color: "var(--special-text)" }}>
+                        Inviaci un messaggio
+                    </h2>
+
+                    <div className="flex flex-col gap-1.5">
+                        <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--special-text)" }}>Nome</span>
+                        <input
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Insert name"
+                            className="w-full px-3.5 py-2.5 rounded-xl bg-white text-[#000824] text-sm outline-none border-[1.5px] border-[#b8d0f0] focus:border-[var(--special-text)] transition-colors placeholder:text-[#aac0db]"
+                        />
+                    </div>
+
+                    <div className="flex flex-col gap-1.5">
+                        <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--special-text)" }}>Email</span>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Insert email"
+                            className="w-full px-3.5 py-2.5 rounded-xl bg-white text-[#000824] text-sm outline-none border-[1.5px] border-[#b8d0f0] focus:border-[var(--special-text)] transition-colors placeholder:text-[#aac0db]"
+                        />
+                    </div>
+
+                    <div className="flex flex-col gap-1.5">
+                        <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--special-text)" }}>Messaggio</span>
+                        <textarea
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            placeholder="Insert message"
+                            className="w-full resize-none h-[180px] px-3.5 py-2.5 rounded-xl bg-white text-[#000824] text-sm outline-none border-[1.5px] border-[#b8d0f0] focus:border-[var(--special-text)] transition-colors placeholder:text-[#aac0db]"
+                        />
+                    </div>
+
+                    <button
+                        onClick={() => addM(name, email, message)}
+                        style={{ backgroundColor: "var(--special-text)", borderColor: "var(--special-text)" }}
+                        className="w-full py-2.5 rounded-xl text-white text-sm font-medium border-[1.5px] transition-all duration-300 hover:opacity-80 mt-1"
+                    >
+                        Send!
+                    </button>
                 </div>
 
                 <div className="md:w-[350px] w-[90%] border p-[10px] border-[var(--special-text)] text-[var(--special-text)] flex flex-col justify-center items-center gap-[10px] rounded-[10px] mt-[20px] mb-[50px] font-bold">

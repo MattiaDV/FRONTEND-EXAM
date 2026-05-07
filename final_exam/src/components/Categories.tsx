@@ -17,24 +17,41 @@ export default function Categories() {
     }, []);
 
     return (
-        <div className="w-[100%] p-[20px] bg-[var(--bg-navbar)] flex flex-col flex-wrap justify-center items-center gap-[10px]">
+        <div className="w-full min-h-screen p-6 bg-white flex flex-col items-center gap-8">
             {CATEGORIES.map(cat => (
-                <div key={cat} className="w-full flex flex-col items-center gap-[10px]">
-                    <h1 className="text-[var(--special-text)] text-[30px] font-bold">{cat}</h1>
-                    <div className="md:w-[70%]: w-[100%] p-[20px] bg-[var(--bg-navbar)] flex flex-wrap justify-center items-center gap-[10px]">
+                <div key={cat} className="w-full max-w-4xl flex flex-col gap-4">
+                    <h2 className="text-2xl font-medium flex items-center gap-2" style={{ color: "var(--special-text)" }}>
+                        {cat}
+                        <span
+                            className="text-xs font-medium px-3 py-1 rounded-full"
+                            style={{ backgroundColor: "#e8f0fb", color: "var(--special-text)" }}
+                        >
+                            {products.filter(p => p.category === cat).length} prodotti
+                        </span>
+                    </h2>
+
+                    <div className="flex flex-wrap gap-4 justify-center">
                         {products
                             .filter(p => p.category === cat)
                             .map((p) => (
-                                <div onClick={() => navigate(`/prodotti/${p.id}`)} className="w-[300px] flex flex-col justify-center items-center h-[300px] bg-[var(--bg)] text-[var(--text)] border border-none rounded-[10px] text-center p-[20px]" key={p.id}>
-                                    <span className="text-[35px]">{p.name}</span>
-                                    <span className="text-[var(--special-text)]">{p.description}</span>
-                                    <span>{p.cost}€</span>
+                                <div
+                                    key={p.id}
+                                    onClick={() => navigate(`/prodotti/${p.id}`)}
+                                    style={{ backgroundColor: "var(--bg)" }}
+                                    className="w-[200px] flex flex-col items-center text-center gap-1.5 p-5 rounded-2xl cursor-pointer border-[1.5px] border-transparent transition-all duration-200 hover:-translate-y-1 hover:border-[var(--special-text)]"
+                                >
+                                    <span className="text-white text-lg font-medium">{p.name}</span>
+                                    <span className="text-[#8fa8cc] text-xs leading-relaxed">{p.description}</span>
+                                    <span className="text-[#60a5fa] text-xl font-medium mt-1">{p.cost}€</span>
+                                    <span className="text-[#8fa8cc] text-[11px] bg-[#1a2a4a] px-3 py-0.5 rounded-full mt-1">{p.category}</span>
                                 </div>
                             ))
                         }
                     </div>
+
+                    <div className="w-full h-px bg-[#dce8f7] mt-2" />
                 </div>
             ))}
         </div>
-    )
+    );
 }
