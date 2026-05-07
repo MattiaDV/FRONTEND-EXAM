@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { useNavigate } from "react-router-dom";
-import type { product } from "../types/prod";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootType, AppDispatch } from "../store/store";
 import { fetchProdotti } from "../store/sliceProdotti";
 
 export default function Products() {
-    const [prod, setProd] = useState<product[]>([]);
     const dispatch = useDispatch<AppDispatch>();
     const { list, loading, error } = useSelector((state: RootType) => state.prod);
     const navigate = useNavigate();

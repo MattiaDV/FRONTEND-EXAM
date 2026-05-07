@@ -1,24 +1,145 @@
 {
   "prodotti": [
-    { "id": 1, "name": "Giacca in pelle nera", "cost": 189, "description": "Giacca biker in ecopelle con zip laterali", "category": "Vestiti" },
-    { "id": 2, "name": "Jeans slim fit", "cost": 69, "description": "Jeans elasticizzati lavaggio medio", "category": "Vestiti" },
-    { "id": 3, "name": "Maglione oversize", "cost": 59, "description": "Maglione in lana merino a trecce", "category": "Vestiti" },
-    { "id": 4, "name": "Camicia oxford bianca", "cost": 45, "description": "Camicia classica in cotone 100%", "category": "Vestiti" },
-    { "id": 5, "name": "Cappotto camel", "cost": 229, "description": "Cappotto doppiopetto in misto lana", "category": "Vestiti" },
-    { "id": 6, "name": "Felpa con cappuccio", "cost": 49, "description": "Felpa unisex in cotone felpato pesante", "category": "Vestiti" },
-    { "id": 7, "name": "Pantaloni cargo", "cost": 75, "description": "Pantaloni con tasconi laterali in tessuto ripstop", "category": "Vestiti" },
-    { "id": 8, "name": "Abito midi floreale", "cost": 89, "description": "Abito a maniche lunghe con stampa botanica", "category": "Vestiti" },
-    { "id": 9, "name": "Orologio minimal bianco", "cost": 129, "description": "Orologio con cassa da 40mm e cinturino in pelle", "category": "Accessori" },
-    { "id": 10, "name": "Borsa tote in canvas", "cost": 39, "description": "Borsa capiente con manici rinforzati", "category": "Accessori" },
-    { "id": 11, "name": "Cintura intrecciata", "cost": 35, "description": "Cintura in cuoio lavorato a mano", "category": "Accessori" },
-    { "id": 12, "name": "Occhiali da sole cat-eye", "cost": 59, "description": "Montatura in acetato con lenti polarizzate", "category": "Accessori" },
-    { "id": 13, "name": "Portafoglio slim", "cost": 49, "description": "Portafoglio sottile in pelle con blocco RFID", "category": "Accessori" },
-    { "id": 14, "name": "Cappello bucket", "cost": 29, "description": "Cappello in cotone ripstop tinta unita", "category": "Accessori" },
-    { "id": 15, "name": "Sciarpa in cashmere", "cost": 79, "description": "Sciarpa morbidissima in cashmere puro", "category": "Accessori" },
-    { "id": 16, "name": "Sneakers chunky bianche", "cost": 119, "description": "Scarpe con suola spessa e tomaia in mesh", "category": "Scarpe" },
-    { "id": 17, "name": "Chelsea boot in pelle", "cost": 159, "description": "Stivaletto elasticizzato con punta tonda", "category": "Scarpe" },
-    { "id": 18, "name": "Mocassini loafer", "cost": 109, "description": "Mocassini eleganti in pelle scamosciata", "category": "Scarpe" },
-    { "id": 19, "name": "Sandali birkenstock style", "cost": 79, "description": "Sandali anatomici con doppio cinturino regolabile", "category": "Scarpe" },
-    { "id": 20, "name": "Sneakers low top nere", "cost": 89, "description": "Scarpe casual in canvas con suola vulcanizzata", "category": "Scarpe" }
-  ]
+    {
+      "id": "1",
+      "name": "Giacca in pelle nera",
+      "description": "Giacca biker in ecopelle con zip laterali",
+      "category": "Vestiti",
+      "cost": 190
+    },
+    {
+      "id": "2",
+      "name": "Jeans slim fit",
+      "cost": 69,
+      "description": "Jeans elasticizzati lavaggio medio",
+      "category": "Vestiti"
+    },
+    {
+      "id": "3",
+      "name": "Maglione oversize",
+      "cost": 59,
+      "description": "Maglione in lana merino a trecce",
+      "category": "Vestiti"
+    },
+    {
+      "id": "4",
+      "name": "Camicia oxford bianca",
+      "cost": 45,
+      "description": "Camicia classica in cotone 100%",
+      "category": "Vestiti"
+    },
+    {
+      "id": "5",
+      "name": "Cappotto camel",
+      "cost": 229,
+      "description": "Cappotto doppiopetto in misto lana",
+      "category": "Vestiti"
+    },
+    {
+      "id": "6",
+      "name": "Felpa con cappuccio",
+      "cost": 49,
+      "description": "Felpa unisex in cotone felpato pesante",
+      "category": "Vestiti"
+    },
+    {
+      "id": "7",
+      "name": "Pantaloni cargo",
+      "cost": 75,
+      "description": "Pantaloni con tasconi laterali in tessuto ripstop",
+      "category": "Vestiti"
+    },
+    {
+      "id": "8",
+      "name": "Abito midi floreale",
+      "cost": 89,
+      "description": "Abito a maniche lunghe con stampa botanica",
+      "category": "Vestiti"
+    },
+    {
+      "id": "9",
+      "name": "Orologio minimal bianco",
+      "cost": 129,
+      "description": "Orologio con cassa da 40mm e cinturino in pelle",
+      "category": "Accessori"
+    },
+    {
+      "id": "10",
+      "name": "Borsa tote in canvas",
+      "cost": 39,
+      "description": "Borsa capiente con manici rinforzati",
+      "category": "Accessori"
+    },
+    {
+      "id": "11",
+      "name": "Cintura intrecciata",
+      "cost": 35,
+      "description": "Cintura in cuoio lavorato a mano",
+      "category": "Accessori"
+    },
+    {
+      "id": "12",
+      "name": "Occhiali da sole cat-eye",
+      "cost": 59,
+      "description": "Montatura in acetato con lenti polarizzate",
+      "category": "Accessori"
+    },
+    {
+      "id": "13",
+      "name": "Portafoglio slim",
+      "cost": 49,
+      "description": "Portafoglio sottile in pelle con blocco RFID",
+      "category": "Accessori"
+    },
+    {
+      "id": "14",
+      "name": "Cappello bucket",
+      "cost": 29,
+      "description": "Cappello in cotone ripstop tinta unita",
+      "category": "Accessori"
+    },
+    {
+      "id": "15",
+      "name": "Sciarpa in cashmere",
+      "cost": 79,
+      "description": "Sciarpa morbidissima in cashmere puro",
+      "category": "Accessori"
+    },
+    {
+      "id": "16",
+      "name": "Sneakers chunky bianche",
+      "cost": 119,
+      "description": "Scarpe con suola spessa e tomaia in mesh",
+      "category": "Scarpe"
+    },
+    {
+      "id": "17",
+      "name": "Chelsea boot in pelle",
+      "cost": 159,
+      "description": "Stivaletto elasticizzato con punta tonda",
+      "category": "Scarpe"
+    },
+    {
+      "id": "18",
+      "name": "Mocassini loafer",
+      "cost": 109,
+      "description": "Mocassini eleganti in pelle scamosciata",
+      "category": "Scarpe"
+    },
+    {
+      "id": "19",
+      "name": "Sandali birkenstock style",
+      "cost": 79,
+      "description": "Sandali anatomici con doppio cinturino regolabile",
+      "category": "Scarpe"
+    },
+    {
+      "id": "20",
+      "name": "Sneakers low top nere",
+      "cost": 89,
+      "description": "Scarpe casual in canvas con suola vulcanizzata",
+      "category": "Scarpe"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
