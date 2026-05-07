@@ -4,6 +4,7 @@ import type { RootType } from "../store/store";
 import { unlog } from "../store/logSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { clear } from "../store/cartSlice";
 
 export default function Navbar() {
     const isLogged = useSelector((state: RootType) => state.log);
@@ -15,6 +16,7 @@ export default function Navbar() {
 
     function logout() {
         dispatch(unlog());
+        dispatch(clear());
         navigate("/");
     }
 

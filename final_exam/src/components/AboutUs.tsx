@@ -2,7 +2,7 @@ export default function AboutUs() {
     return (
         <>
             <div className="w-[100%] flex flex-col justify-center items-center text-center bg-[var(--text)]">
-                <h1 className="text-[50px] font-bold">About us</h1>
+                <h1 className="text-[50px] font-bold text-[var(--special-text)]">About us</h1>
                 <p className="w-[90%] md:w-[50%] italic">
                     Il nostro store nasce con un’idea semplice: proporre capi e accessori moderni,
                     versatili e adatti a ogni stile. Dal cappotto camel alla giacca in pelle nera,

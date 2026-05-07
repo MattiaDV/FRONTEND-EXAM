@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import type { product } from "../types/prod";
+import type { productCart } from "../types/prod";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "../store/cartSlice";
@@ -10,7 +10,7 @@ import type { RootType } from "../store/store";
 export default function ProductPage() {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [prod, setProd] = useState<product>();
+    const [prod, setProd] = useState<productCart>();
     const dispatch = useDispatch();
 
     const isLogged = useSelector((state: RootType) => state.log);
@@ -24,9 +24,15 @@ export default function ProductPage() {
         fetchProd();
     }, [id]);
 
-    function addToCart(prod: product) {
+    function addToCart(prod: productCart) {
         if (isLogged.log) {
-            dispatch(add(prod))
+            
+            const productAdd: productCart = {
+                ...prod,
+                fake_cart_id: Date.now()
+            }
+
+            dispatch(add(productAdd))
             toast.success("Aggiunto al carrello!", {
                 position: "bottom-right",
                 autoClose: 2000,

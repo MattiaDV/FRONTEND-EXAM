@@ -30,7 +30,7 @@ export default function Cart() {
                                     <span style={{ color: "#0057bb" }} className="text-[16px] font-bold">{item.cost}€</span>
                                 </div>
                                 <button
-                                    onClick={() => dispatch(remove(item.id))}
+                                    onClick={() => dispatch(remove(item.fake_cart_id))}
                                     className="px-[16px] py-[8px] rounded-[10px] font-bold text-[13px] cursor-pointer"
                                     style={{ border: "1px solid #ff444466", color: "#ff4444", background: "transparent" }}>
                                     Rimuovi
@@ -39,7 +39,7 @@ export default function Cart() {
                         ))}
 
                         <div className="w-full max-w-[600px] flex justify-between items-center mt-[10px]">
-                            <span className="text-white text-[20px]">Totale: <strong style={{ color: "#0057bb" }}>{total}€</strong></span>
+                            <span className="text-[var(--special-text)] text-[20px]">Totale: <strong style={{ color: "#0057bb" }}>{total}€</strong></span>
                             <button
                                 onClick={() => dispatch(clear())}
                                 className="px-[20px] py-[10px] rounded-[12px] font-bold cursor-pointer text-white"

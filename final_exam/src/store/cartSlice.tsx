@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { product } from "../types/prod";
+import type { productCart } from "../types/prod";
 
 const cartSlice = createSlice({
     name: "cart",
-    initialState: { list: [] as product[] },
+    initialState: { list: [] as productCart[] },
     reducers: {
         add: (state, action) => { state.list.push(action.payload) },
-        remove: (state, action) => { state.list = state.list.filter(p => p.id !== action.payload) },
+        remove: (state, action) => { state.list = state.list.filter(p => p.fake_cart_id !== action.payload) },
         clear: (state) => { state.list = [] }
     }
 })

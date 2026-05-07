@@ -4,10 +4,13 @@ import type { RootType, AppDispatch } from "../store/store"
 import { useState } from "react";
 import type { product } from "../types/prod";
 import { ToastContainer, toast } from "react-toastify";
+import { remove } from "../store/sliceMessages";
 
 export default function Admin() {
     const dispatch = useDispatch<AppDispatch>();
     const list = useSelector((state: RootType) => state.prod.list);
+
+    const messages = useSelector((state: RootType) => state.messages.messages);
 
     const [newName, setNewName] = useState("");
     const [newDescription, setNewDescription] = useState("");
@@ -71,6 +74,25 @@ export default function Admin() {
             <ToastContainer />
 
             <h1 className="text-[var(--special-text)] text-[30px] font-bold">Admin Panel</h1>
+
+            <div className="flex flex-col justify-center items-center p-[20px] gap-[10px]">
+                <h1 className="text-[var(--special-text)] text-[20px] font-bold">Messages</h1>
+                {
+                    messages.length > 0 ?
+                    messages.map((m, i) => (
+                        <div className="flex flex-col p-[20px] gap-[10px] justify-center items-center text-center w-[100%] md:max-w-[500px] bg-[var(--bg)] text-[var(--text)] border border-[var(--bg)] rounded-[10px]" key={i}>
+                            <div className=""><span className="font-bold text-[var(--special-text)]">Name: </span>{m.name}</div>
+                            <div className=""><span className="font-bold text-[var(--special-text)]">Email: </span><a className="underline" href={`mailto:${m.email.trim()}`}>{m.email}</a></div>
+                            <div className=""><span className="font-bold text-[var(--special-text)]">Message: </span>{m.message}</div>
+                            <button onClick={() => dispatch(remove(m.id))} className="p-[10px] w-[100%] bg-[var(--special-text)] border border-[var(--special-text)] rounded-[10px] transition-all duration-[400ms] hover:bg-[transparent] hover:text-[var(--special-text)]">Remove</button>
+                        </div>
+                    ))
+                    :
+                    <p className="font-bold text-[var(--special-text)]">
+                        Non ci sono messaggi
+                    </p>
+                }
+            </div>
 
             <div className="md:w-[500px] w-[100%] flex flex-col justify-center items-center gap-[10px] p-[20px] border border-[#0057bb33] rounded-[10px]">
                 <h2 className="text-[var(--special-text)] text-[20px] font-bold">Aggiungi prodotto</h2>
