@@ -8,6 +8,8 @@ import Cart from './pages/cart'
 import LoginPage from './pages/LoginPage'
 import AdminPanel from './pages/AdminPage'
 import PageNotFound from './pages/404Page'
+import AboutUsPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Route path="/carrello" element={<Cart />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/admin" element={<AdminPanel />} />
+      <Route path="/about" element={<AboutUsPage />} />
+      <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   )

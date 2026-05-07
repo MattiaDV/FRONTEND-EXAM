@@ -20,7 +20,7 @@ export default function Products() {
         <div className="w-[100%] p-[20px] bg-[var(--bg-navbar)] flex flex-col flex-wrap justify-center items-center gap-[10px]">
             <h1 className="text-[var(--special-text)] text-[30px] font-bold">Prodotti</h1>
             
-            <div className="w-[70%] p-[20px] flex flex-wrap justify-center items-center gap-[10px]">
+            <div className="md:w-[70%]: w-[100%] p-[20px] flex flex-wrap justify-center items-center gap-[10px]">
                 {
                     list.map((p) => (
                         <div 

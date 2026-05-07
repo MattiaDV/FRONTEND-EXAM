@@ -67,12 +67,12 @@ export default function Admin() {
     }
 
     return (
-        <div className="w-[100%] min-h-screen p-[20px] flex flex-col justify-center items-center gap-[10px] bg-[var(--bg)]">
+        <div className="w-[100%] min-h-screen p-[20px] flex flex-col justify-center items-center gap-[10px]">
             <ToastContainer />
 
             <h1 className="text-[var(--special-text)] text-[30px] font-bold">Admin Panel</h1>
 
-            <div className="w-[500px] flex flex-col justify-center items-center gap-[10px] p-[20px] border border-[#0057bb33] rounded-[10px]">
+            <div className="md:w-[500px] w-[100%] flex flex-col justify-center items-center gap-[10px] p-[20px] border border-[#0057bb33] rounded-[10px]">
                 <h2 className="text-[var(--special-text)] text-[20px] font-bold">Aggiungi prodotto</h2>
                 <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)} placeholder="Nome" className="w-[100%] p-[10px] text-[var(--text)] bg-[var(--bg)] border border-[#0057bb33] rounded-[10px] outline-none focus:border-[var(--special-text)] transition-all duration-[400ms]" />
                 <textarea value={newDescription} onChange={(e) => setNewDescription(e.target.value)} placeholder="Descrizione" className="w-[100%] p-[10px] text-[var(--text)] bg-[var(--bg)] border border-[#0057bb33] rounded-[10px] outline-none focus:border-[var(--special-text)] transition-all duration-[400ms] resize-none" rows={3} />
@@ -85,16 +85,16 @@ export default function Admin() {
                     <span className="absolute right-[10px] top-[50%] translate-y-[-50%] text-[var(--special-text)] pointer-events-none">▼</span>
                 </div>
                 <input type="number" value={newCost} onChange={(e) => setNewCost(Number(e.target.value))} placeholder="Prezzo" className="w-[100%] p-[10px] text-[var(--text)] bg-[var(--bg)] border border-[#0057bb33] rounded-[10px] outline-none focus:border-[var(--special-text)] transition-all duration-[400ms]" />
-                <button onClick={() => addP(newName, newDescription, newCategory, newCost)} className="w-[100%] p-[10px] text-[var(--text)] border border-[var(--special-text)] rounded-[10px] transition-all duration-[400ms] hover:bg-[var(--special-text)]">
+                <button onClick={() => addP(newName, newDescription, newCategory, newCost)} className="w-[100%] p-[10px] text-[var(--special-text)] border border-[var(--special-text)] rounded-[10px] transition-all duration-[400ms] hover:bg-[var(--special-text)] hover:text-[var(--text)]">
                     + Aggiungi prodotto
                 </button>
             </div>
 
             {updateId !== null && (
-                <div className="w-[500px] flex flex-col justify-center items-center gap-[10px] p-[20px] border border-[var(--special-text)] rounded-[10px]">
+                <div className="md:w-[500px] w-[100%] flex flex-col justify-center items-center gap-[10px] p-[20px] border border-[var(--special-text)] rounded-[10px]">
                     <div className="w-[100%] flex justify-between items-center">
                         <h2 className="text-[var(--special-text)] text-[20px] font-bold">Modifica prodotto</h2>
-                        <span onClick={() => setUpdateId(null)} className="text-[var(--text)] opacity-50 hover:opacity-100 cursor-pointer transition-all duration-[400ms]">✕ Annulla</span>
+                        <span onClick={() => setUpdateId(null)} className="text-[var(--special-text)] opacity-50 hover:opacity-100 cursor-pointer transition-all duration-[400ms]">✕ Annulla</span>
                     </div>
                     <input type="text" value={updateName} onChange={(e) => setUpdateName(e.target.value)} placeholder="Nome" className="w-[100%] p-[10px] text-[var(--text)] bg-[var(--bg)] border border-[#0057bb33] rounded-[10px] outline-none focus:border-[var(--special-text)] transition-all duration-[400ms]" />
                     <textarea value={updateDescription} onChange={(e) => setUpdateDescription(e.target.value)} placeholder="Descrizione" className="w-[100%] p-[10px] text-[var(--text)] bg-[var(--bg)] border border-[#0057bb33] rounded-[10px] outline-none focus:border-[var(--special-text)] transition-all duration-[400ms] resize-none" rows={3} />
@@ -107,25 +107,25 @@ export default function Admin() {
                         <span className="absolute right-[10px] top-[50%] translate-y-[-50%] text-[var(--special-text)] pointer-events-none">▼</span>
                     </div>
                     <input type="number" value={updateCost} onChange={(e) => setUpdateCost(Number(e.target.value))} placeholder="Prezzo" className="w-[100%] p-[10px] text-[var(--text)] bg-[var(--bg)] border border-[#0057bb33] rounded-[10px] outline-none focus:border-[var(--special-text)] transition-all duration-[400ms]" />
-                    <button onClick={updateP} className="w-[100%] p-[10px] text-[var(--text)] border border-[var(--special-text)] rounded-[10px] transition-all duration-[400ms] hover:bg-[var(--special-text)]">
+                    <button onClick={updateP} className="w-[100%] p-[10px] text-[var(--special-text)] hover:text-[var(--text)] border border-[var(--special-text)] rounded-[10px] transition-all duration-[400ms] hover:bg-[var(--special-text)]">
                         ✓ Salva modifiche
                     </button>
                 </div>
             )}
 
-            <div className="w-[500px] flex flex-col gap-[10px]">
+            <div className="w-[100%] flex flex-col gap-[10px] justify-center items-center">
                 {list.map((p) => (
                     <div
                         key={p.id}
-                        className={`w-[100%] flex justify-between items-center p-[15px] border rounded-[10px] transition-all duration-[400ms] ${updateId === p.id ? 'border-[var(--special-text)]' : 'border-[#0057bb33] hover:border-[var(--special-text)]'}`}
+                        className={`md:w-[500px] w-[100%] flex justify-between items-center p-[15px] border rounded-[10px] transition-all duration-[400ms] ${updateId === p.id ? 'border-[var(--special-text)]' : 'border-[#0057bb33] hover:border-[var(--special-text)]'}`}
                     >
                         <div className="flex flex-col gap-[5px]">
-                            <span className="text-[var(--text)] text-[18px] font-bold">{p.name}</span>
-                            <span className="text-[var(--text)] opacity-50 text-[12px]">{p.description}</span>
+                            <span className="text-[var(--special-text)] text-[18px] font-bold">{p.name}</span>
+                            <span className="text-[var(--special-text)] opacity-50 text-[12px]">{p.description}</span>
                             <span className="text-[var(--special-text)] text-[14px]">{p.category} — {p.cost}€</span>
                         </div>
                         <div className="flex flex-col gap-[5px]">
-                            <button onClick={() => selectForUpdate(p)} className="p-[8px] text-[var(--text)] text-[12px] border border-[#0057bb33] rounded-[10px] transition-all duration-[400ms] hover:bg-[var(--special-text)] hover:border-[var(--special-text)]">
+                            <button onClick={() => selectForUpdate(p)} className="p-[8px] text-[var(--special-text)] hover:text-[var(--text)] text-[12px] border border-[#0057bb33] rounded-[10px] transition-all duration-[400ms] hover:bg-[var(--special-text)] hover:border-[var(--special-text)]">
                                 Modifica
                             </button>
                             <button onClick={() => deleteP(p.id)} className="p-[8px] text-red-400 text-[12px] border border-red-400 rounded-[10px] transition-all duration-[400ms] hover:bg-red-400 hover:text-white">

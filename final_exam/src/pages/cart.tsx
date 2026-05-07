@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootType } from "../store/store";
 import { remove, clear } from "../store/cartSlice";
 import Navbar from "../components/Navbar";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Cart() {
     const dispatch = useDispatch();
@@ -11,18 +13,19 @@ export default function Cart() {
     return (
         <>
             <Navbar />
-            <div className="w-full min-h-screen bg-[#000824] flex flex-col items-center p-[40px] gap-[16px]">
-                <h1 className="text-[30px] font-bold text-white mb-[10px]">Carrello</h1>
+            <Header title="Cart" />
+            <div className="w-full min-h-screen bg-[var(--text)] flex flex-col items-center p-[40px] gap-[16px]">
+                <h1 className="text-[30px] font-bold text-[var(--special-text)] mb-[10px]">Carrello</h1>
 
                 {items.length === 0 ? (
-                    <span className="text-white text-[20px] mt-[40px]">Il carrello è vuoto</span>
+                    <span className="text-[var(--special-text)] text-[20px] mt-[40px]">Il carrello è vuoto</span>
                 ) : (
                     <>
                         {items.map(item => (
                             <div key={item.id} className="w-full max-w-[600px] rounded-[16px] p-[20px] flex justify-between items-center"
                                 style={{ border: "1px solid #0057bb33", background: "#000824" }}>
                                 <div className="flex flex-col gap-[4px]">
-                                    <span className="text-white font-bold text-[18px]">{item.name}</span>
+                                    <span className="text-[var(--special-text)] font-bold text-[18px]">{item.name}</span>
                                     <span style={{ color: "#ffffff99" }} className="text-[13px]">{item.category}</span>
                                     <span style={{ color: "#0057bb" }} className="text-[16px] font-bold">{item.cost}€</span>
                                 </div>
@@ -47,6 +50,7 @@ export default function Cart() {
                     </>
                 )}
             </div>
+            <Footer />
         </>
     );
 }

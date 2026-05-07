@@ -21,7 +21,7 @@ export default function Categories() {
             {CATEGORIES.map(cat => (
                 <div key={cat} className="w-full flex flex-col items-center gap-[10px]">
                     <h1 className="text-[var(--special-text)] text-[30px] font-bold">{cat}</h1>
-                    <div className="w-[70%] p-[20px] bg-[var(--bg-navbar)] flex flex-wrap justify-center items-center gap-[10px]">
+                    <div className="md:w-[70%]: w-[100%] p-[20px] bg-[var(--bg-navbar)] flex flex-wrap justify-center items-center gap-[10px]">
                         {products
                             .filter(p => p.category === cat)
                             .map((p) => (

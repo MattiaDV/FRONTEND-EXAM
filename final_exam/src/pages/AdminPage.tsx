@@ -4,6 +4,8 @@ import { useSelector } from "react-redux"
 import type { RootType } from "../store/store"
 import { useNavigate } from "react-router-dom"
 import Admin from "../components/Admin"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 export default function AdminPanel() {
     const navigate = useNavigate();
@@ -18,7 +20,11 @@ export default function AdminPanel() {
     return (
         <>
             <Navbar />
-            <Admin />
+            <Header title="Admin"/>
+            <div className="w-[100%] bg-[var(--text)]">
+                <Admin />
+            </div>
+            <Footer />
         </>
     )
 }
