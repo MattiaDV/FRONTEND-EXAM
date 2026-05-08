@@ -35,3 +35,9 @@ Dentro la cartella "src" si trovano le cartelle principali:
     - messaggi
     - prodotti: che contiene le thunk per fare le chiamate API
 - types: contiene le type dei messaggi e dei prodotti 
+
+## Come scaricarlo ed usarlo:
+- clonare il repo
+```bash
+git clone https://github.com/MattiaDV/FRONTEND-EXAM.git
+```
