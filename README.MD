@@ -37,7 +37,7 @@ Dentro la cartella "src" si trovano le cartelle principali:
 - types: contiene le type dei messaggi e dei prodotti 
 
 ## Features
-- Filtrare prodotti: incluso nel componente <Products />
+- Filtrare prodotti: incluso nel componente ```HTML <Products /> ```
 - Dynamic page: una pagina dinamica che si adatta ad ogni prodotto e permette di aggiungere al carrello
 - Admin page: permette di aggiungere, modificare o eliminare prodotti e vedere anche i messaggi
 - form di contatto: permette di inviare messaggi direttamente alla pagina admin
