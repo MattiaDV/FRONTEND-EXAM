@@ -29,12 +29,27 @@ Dentro la cartella "src" si trovano le cartelle principali:
 - components: Contiene tutti i componenti riutilizzabili
 - Dynamic: contiene esclusivamente la pagina dinamica che presenta ogni prodotto singolarmente
 - pages: contiene tutte le pagine
-- store: stora i vari dati e contiene le slice per i reducer di:
+- store: salva i vari dati e contiene le slice per i reducer di:
     - carrello
     - login
     - messaggi
     - prodotti: che contiene le thunk per fare le chiamate API
 - types: contiene le type dei messaggi e dei prodotti 
+
+## Features
+- Filtrare prodotti: incluso nel componente <Products />
+- Dynamic page: una pagina dinamica che si adatta ad ogni prodotto e permette di aggiungere al carrello
+- Admin page: permette di aggiungere, modificare o eliminare prodotti e vedere anche i messaggi
+- form di contatto: permette di inviare messaggi direttamente alla pagina admin
+- security admin: devi per forza essere admin per accedere alla pagina /admin sennò vieni buttato subito fuori
+- Carrello: per aggiungere prodotti al carrello devi per forza essere loggato
+- API call: vengono fatte con createAsyncThunk per aggiungere, modificare, eliminare o vedere tutti i prodotti
+
+## Preview
+![Preview](./image_1.png)
+![Preview](./image_2.png)
+![Preview](./image_3.png)
+![Preview](./image_4.png)
 
 ## Come scaricarlo ed usarlo:
 - clonare il repo
