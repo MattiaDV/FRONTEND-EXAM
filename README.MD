@@ -41,3 +41,19 @@ Dentro la cartella "src" si trovano le cartelle principali:
 ```bash
 git clone https://github.com/MattiaDV/FRONTEND-EXAM.git
 ```
+- spostarsi della cartella:
+```bash
+cd final_exam
+```
+- Lanciare il comando di installazione delle librerie:
+```bash
+npm install
+```
+- lanciare il server JSON:
+```bash
+json-server --watch db.json --port 3001
+```
+- lanciare lo store:
+```bash
+npm run dev
+```
