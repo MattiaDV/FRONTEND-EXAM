@@ -47,8 +47,11 @@ Dentro la cartella "src" si trovano le cartelle principali:
 
 ## Preview
 ![Preview](./image_1.png)
+
 ![Preview](./image_2.png)
+
 ![Preview](./image_3.png)
+
 ![Preview](./image_4.png)
 
 ## Come scaricarlo ed usarlo:
