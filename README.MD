@@ -41,7 +41,7 @@ Dentro la cartella "src" si trovano le cartelle principali:
 ```bash
 git clone https://github.com/MattiaDV/FRONTEND-EXAM.git
 ```
-- spostarsi della cartella:
+- spostarsi nella cartella:
 ```bash
 cd final_exam
 ```
