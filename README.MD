@@ -71,7 +71,10 @@ npm install
 ```bash
 json-server --watch db.json --port 3001
 ```
-- lanciare lo store:
+- avviare il frontend:
 ```bash
 npm run dev
 ```
+
+# Perché l'ho creato:
+Questo è il mio esame universitario di frontend developing, ho scelto l'e-commerce perché secondo me è quello che mi avrebbe aiutato a inserire tutte le cose richieste nel compito ed era anche quello che mi dava più idee per features da inserire come ad esempio, molto banalmente, i filtri per i prodotti.
