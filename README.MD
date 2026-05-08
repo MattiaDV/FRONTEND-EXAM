@@ -1,6 +1,6 @@
 # E-Commerce Store
 
-Questo è un e-commerce strutturato con login finto collegato a JSON Server, è suddiviso su più pagine:
+Questo è un e-commerce strutturato con login simulato (non salva utenti o dati di utenti) collegato a JSON Server, è suddiviso su più pagine:
 - Home
 - Products
 - Categories
