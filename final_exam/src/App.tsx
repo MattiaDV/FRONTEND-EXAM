@@ -10,6 +10,7 @@ import AdminPanel from './pages/AdminPage'
 import PageNotFound from './pages/404Page'
 import AboutUsPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import RegisterPage from './pages/RegisterPage'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/admin" element={<AdminPanel />} />
       <Route path="/about" element={<AboutUsPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/register" element={<RegisterPage />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   )

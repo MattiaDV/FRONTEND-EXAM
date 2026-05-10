@@ -32,7 +32,10 @@ export default function ProductPage() {
                 fake_cart_id: Date.now()
             }
 
-            dispatch(add(productAdd))
+            dispatch(add({
+                email: isLogged.email,
+                product: productAdd
+            }));
             toast.success("Aggiunto al carrello!", {
                 position: "bottom-right",
                 autoClose: 2000,

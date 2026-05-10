@@ -4,7 +4,6 @@ import type { RootType } from "../store/store";
 import { unlog } from "../store/logSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { clear } from "../store/cartSlice";
 
 export default function Navbar() {
     const isLogged = useSelector((state: RootType) => state.log);
@@ -16,7 +15,6 @@ export default function Navbar() {
 
     function logout() {
         dispatch(unlog());
-        dispatch(clear());
         navigate("/");
     }
 
@@ -44,7 +42,11 @@ export default function Navbar() {
                 <div onClick={() => { navigate("/contact"); setMobileOpen(false); }} className="cursor-pointer p-[10px] transition-all duration-[400ms] hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[100px] text-center rounded-[10px]">Contact us</div>
                 <div onClick={() => { navigate("/carrello"); setMobileOpen(false); }} className="cursor-pointer p-[10px] transition-all duration-[400ms] hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[100px] text-center rounded-[10px]">Carrello</div>
                 {!isLogged.log
-                    ? <div onClick={() => { navigate("/login"); setMobileOpen(false); }} className="cursor-pointer p-[10px] transition-all duration-[400ms] hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[100px] text-center rounded-[10px]">Login</div>
+                    ? 
+                        <>
+                            <div onClick={() => { navigate("/login"); setMobileOpen(false); }} className="cursor-pointer p-[10px] transition-all duration-[400ms] hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[100px] text-center rounded-[10px]">Login</div>
+                            <div onClick={() => { navigate("/register"); setMobileOpen(false); }} className="cursor-pointer p-[10px] transition-all duration-[400ms] hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[100px] text-center rounded-[10px]">Register</div>
+                        </>
                     : <div onClick={() => logout()} className="cursor-pointer p-[10px] transition-all duration-[400ms] hover:bg-[var(--text-color-navbar)] hover:text-[var(--bg-navbar)] w-[100px] text-center rounded-[10px]">Logout</div>
                 }
                 {isAdmin &&

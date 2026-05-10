@@ -141,5 +141,21 @@
       "category": "Scarpe"
     }
   ],
+  "utenti": [
+    {
+      "complete_name": "Mattia De Vincentis",
+      "email": "mattia@gmail.com",
+      "password": "test!!",
+      "role": "admin",
+      "id": "JWez3CrzjL8"
+    },
+    {
+      "complete_name": "test test",
+      "email": "test@gmail.com",
+      "password": "test!!",
+      "role": "user",
+      "id": "Hif3X39BWFQ"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
